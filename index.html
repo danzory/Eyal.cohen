@@ -885,7 +885,7 @@
                     id: 'bench',
                     name: 'לחיצת חזה בסמית',
                     note: 'עם שיפוע קטן',
-                    current: '22.5kg צד 🆕',
+                    current: '22.5kg צד',
                     history: [
                         { date: '2026-03-15', weight: 17.5 },
                         { date: '2026-03-29', weight: 20 },
@@ -897,7 +897,7 @@
                     id: 'tbar',
                     name: 'חתירה צרה בטיבר',
                     note: '',
-                    current: '45kg 🆕',
+                    current: '45kg',
                     history: [
                         { date: '2026-03-15', weight: 35 },
                         { date: '2026-03-29', weight: 40 },
@@ -909,7 +909,8 @@
                     id: 'rdl',
                     name: 'דדליפט רומני',
                     note: '',
-                    current: '45kg 🆕',
+                    current: '45kg',
+                    isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 45 }
                     ],
@@ -919,7 +920,8 @@
                     id: 'pulldown',
                     name: 'פולי עליון במכונה',
                     note: '',
-                    current: '60kg צד 🆕',
+                    current: '60kg צד',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 50 },
                         { date: '2026-03-29', weight: 55 },
@@ -931,7 +933,7 @@
                     id: 'hack',
                     name: 'האק סקוואט',
                     note: '',
-                    current: '100kg 🆕',
+                    current: '100kg',
                     history: [
                         { date: '2026-03-15', weight: 80 },
                         { date: '2026-03-29', weight: 90 },
@@ -943,7 +945,7 @@
                     id: 'flyes',
                     name: 'פרפר בקרוס הקטן',
                     note: '',
-                    current: '10kg צד 🆕',
+                    current: '10kg צד',
                     history: [
                         { date: '2026-03-15', weight: 7.5 },
                         { date: '2026-03-29', weight: 10 },
@@ -955,7 +957,7 @@
                     id: 'legcurl',
                     name: 'כפיפת ברכיים בשכיבה',
                     note: '',
-                    current: '8 פלטות 🆕',
+                    current: '8 פלטות',
                     history: [
                         { date: '2026-03-15', weight: 6 },
                         { date: '2026-03-29', weight: 7 },
@@ -967,7 +969,7 @@
                     id: 'latraise_sit',
                     name: 'הרחקות כתפיים בישיבה',
                     note: '',
-                    current: '6kg 🆕',
+                    current: '6kg',
                     history: [
                         { date: '2026-03-15', weight: 5 },
                         { date: '2026-03-29', weight: 6 },
@@ -979,7 +981,7 @@
                     id: 'latraise_stand',
                     name: 'הרחקות כתפיים בעמידה על ספסל',
                     note: '',
-                    current: '6kg 🆕',
+                    current: '6kg',
                     history: [
                         { date: '2026-03-15', weight: 5 },
                         { date: '2026-03-29', weight: 6 },
@@ -991,7 +993,8 @@
                     id: 'latraise_lie',
                     name: 'הרחקות כתפיים בשכיבה',
                     note: '',
-                    current: '10kg 🆕',
+                    current: '10kg',
+                    isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 10 }
                     ],
@@ -1001,7 +1004,8 @@
                     id: 'preacher',
                     name: 'כפיפת מרפק בכיסא כומר',
                     note: '',
-                    current: '30kg 🆕',
+                    current: '30kg',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 25 },
                         { date: '2026-03-29', weight: 27.5 },
@@ -1013,7 +1017,7 @@
                     id: 'skullcrusher',
                     name: 'Skull Crusher (פשיטות מרפקים)',
                     note: '',
-                    current: '30kg 🆕',
+                    current: '30kg',
                     history: [
                         { date: '2026-03-15', weight: 25 },
                         { date: '2026-03-29', weight: 27.5 },
@@ -1025,7 +1029,7 @@
                     id: 'wide_row',
                     name: 'חתירה רחבה במכונה',
                     note: 'גובה 4-5 בכיסא, להישען לכרית',
-                    current: '42.5kg צד 🆕',
+                    current: '42.5kg צד',
                     history: [
                         { date: '2026-03-15', weight: 35 },
                         { date: '2026-03-29', weight: 40 },
@@ -1037,7 +1041,8 @@
                     id: 'dips',
                     name: 'מקבילים',
                     note: '',
-                    current: '6 חזרות 🆕',
+                    current: '6 חזרות',
+                    isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 0, reps: 6 }
                     ],
@@ -1057,6 +1062,7 @@
                 tr.onclick = () => openChart(pr);
                 
                 let noteHtml = pr.note ? `<div class="text-xs text-slate-500 font-normal mt-0.5">${pr.note}</div>` : '';
+                let newBadgeHtml = pr.isNewPR ? `<span class="bg-gradient-to-r from-red-500 to-orange-500 text-white text-[10px] font-black rounded px-1.5 py-0.5 shadow-sm tracking-wider uppercase">New</span>` : '';
                 
                 tr.innerHTML = `
                     <td class="px-6 py-4 text-sm font-bold text-slate-800">
@@ -1067,6 +1073,7 @@
                         ${noteHtml}
                     </td>
                     <td class="px-6 py-4 text-sm font-bold text-right text-blue-600 flex items-center justify-end gap-2" dir="ltr">
+                        ${newBadgeHtml}
                         ${pr.current}
                         <i data-lucide="bar-chart-2" class="w-4 h-4 text-slate-300 group-hover:text-blue-500 transition-colors sm:hidden"></i>
                     </td>
