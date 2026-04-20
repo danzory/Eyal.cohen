@@ -99,6 +99,18 @@
             height: 300px;
             width: 100%;
         }
+
+        /* הקטנת עמודת הסטים ומרכוז בטבלאות האימון */
+        #trainingContent table th:nth-child(1) { width: 45% !important; }
+        #trainingContent table th:nth-child(2),
+        #trainingContent table td:nth-child(2) {
+            width: 10% !important;
+            min-width: 60px;
+            text-align: center !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+        #trainingContent table th:nth-child(3) { width: 45% !important; }
     </style>
 </head>
 <body class="text-slate-800">
