@@ -101,16 +101,22 @@
         }
 
         /* הקטנת עמודת הסטים ומרכוז בטבלאות האימון */
-        #trainingContent table th:nth-child(1) { width: 45% !important; }
+        #trainingContent table th:nth-child(1) { width: 55% !important; }
+        /* הסתרת עמודת הסטים לחלוטין */
         #trainingContent table th:nth-child(2),
         #trainingContent table td:nth-child(2) {
-            width: 10% !important;
-            min-width: 60px;
-            text-align: center !important;
-            padding-left: 0.5rem !important;
-            padding-right: 0.5rem !important;
+            display: none !important;
         }
         #trainingContent table th:nth-child(3) { width: 45% !important; }
+
+        /* הסרת כיתובי הסטים (סט 1:) בעמודת המשקלים למראה נקי ולחסכון במקום */
+        #trainingContent td:nth-child(3) > div { min-width: auto !important; }
+        #trainingContent td:nth-child(3) div.flex > span:first-child { display: none; }
+        #trainingContent td:nth-child(3) div.flex { justify-content: center !important; }
+        
+        /* הגדלת טקסטים בטבלאות */
+        #trainingContent td .text-\\[13px\\] { font-size: 14px !important; line-height: 1.4; }
+        #trainingContent td .text-\\[11px\\] { font-size: 12px !important; }
     </style>
 </head>
 <body class="text-slate-800">
@@ -179,8 +185,8 @@
                             <i data-lucide="flame" class="text-blue-500 w-5 h-5"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-slate-900 text-sm mb-1">מכונת שיאים! 🚀</p>
-                            <p class="text-sm text-slate-600 leading-relaxed">מטורף! 50 ק"ג בבנץ', 60 ק"ג כל צד בפולי ל-7 חזרות, דדליפט רומני עלה ל-55 ק"ג, 12.5 ק"ג בפרפר קרוס ומקבילים כבר עם תוספת משקל של 5 ק"ג! פשוט מכונת התקדמות שלא עוצרת, תמשיך ככה!</p>
+                            <p class="font-bold text-slate-900 text-sm mb-1">שבירת שיאים נמשכת! 🚀</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">פשוט אין מילים. בנץ' עליון עלה ל-50 ק"ג! פולי עליון הגיע ל-62.5 ק"ג כל צד, וכל הגוף מתחזק. האק סקוואט כבר ב-100 ק"ג ל-6 חזרות. התקדמות מטורפת בכל החזיתות, כל הכבוד!</p>
                         </div>
                     </div>
                     
@@ -1070,6 +1076,17 @@
             // Data structure to hold history of PRs for charting
             const prData = [
                 {
+                    id: 'bench_incline_free',
+                    name: 'בנץ עליון חופשי',
+                    note: '',
+                    current: '50kg x 4',
+                    isNewPR: true,
+                    history: [
+                        { date: '2026-05-10', weight: 50, reps: 4 }
+                    ],
+                    unit: 'kg'
+                },
+                {
                     id: 'bench',
                     name: 'לחיצת חזה בסמית',
                     note: 'עם שיפוע קטן',
@@ -1098,11 +1115,12 @@
                     id: 'rdl',
                     name: 'דדליפט רומני',
                     note: '',
-                    current: '55kg x 6',
+                    current: '55kg x 7',
                     isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 45, reps: 6 },
-                        { date: '2026-04-19', weight: 55, reps: 6 }
+                        { date: '2026-04-19', weight: 55, reps: 6 },
+                        { date: '2026-05-10', weight: 55, reps: 7 }
                     ],
                     unit: 'kg'
                 },
@@ -1110,13 +1128,14 @@
                     id: 'pulldown',
                     name: 'פולי עליון במכונה',
                     note: '',
-                    current: '60kg צד x 7',
+                    current: '62.5kg צד x 5',
                     isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 50, reps: 8 },
                         { date: '2026-03-29', weight: 55, reps: 7 },
                         { date: '2026-04-13', weight: 60, reps: 6 },
-                        { date: '2026-04-19', weight: 60, reps: 7 }
+                        { date: '2026-04-19', weight: 60, reps: 7 },
+                        { date: '2026-05-10', weight: 62.5, reps: 5 }
                     ],
                     unit: 'kg'
                 },
@@ -1125,10 +1144,12 @@
                     name: 'האק סקוואט',
                     note: '',
                     current: '100kg x 6',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 80, reps: 8 },
                         { date: '2026-03-29', weight: 90, reps: 7 },
-                        { date: '2026-04-13', weight: 100, reps: 6 }
+                        { date: '2026-04-13', weight: 100, reps: 6 },
+                        { date: '2026-05-10', weight: 100, reps: 6 }
                     ],
                     unit: 'kg'
                 },
@@ -1173,12 +1194,14 @@
                     id: 'latraise_stand',
                     name: 'הרחקות כתפיים בעמידה על ספסל',
                     note: '',
-                    current: '7kg x 6',
+                    current: '7kg x 8',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 5, reps: 10 },
                         { date: '2026-03-29', weight: 6, reps: 8 },
                         { date: '2026-04-13', weight: 6, reps: 10 },
-                        { date: '2026-04-19', weight: 7, reps: 6 }
+                        { date: '2026-04-19', weight: 7, reps: 6 },
+                        { date: '2026-05-10', weight: 7, reps: 8 }
                     ],
                     unit: 'kg'
                 },
@@ -1187,7 +1210,6 @@
                     name: 'הרחקות כתפיים בשכיבה',
                     note: '',
                     current: '10kg x 7',
-                    isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 10, reps: 7 }
                     ],
@@ -1195,15 +1217,16 @@
                 },
                 {
                     id: 'preacher',
-                    name: 'כפיפת מרפק בכיסא כומר',
+                    name: 'כפיפת מרפק כומר במכונה',
                     note: '',
-                    current: '30kg x 8',
+                    current: '32.5kg x 6',
                     isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 25, reps: 8 },
                         { date: '2026-03-29', weight: 27.5, reps: 8 },
                         { date: '2026-04-13', weight: 30, reps: 6 },
-                        { date: '2026-04-19', weight: 30, reps: 8 }
+                        { date: '2026-04-19', weight: 30, reps: 8 },
+                        { date: '2026-05-10', weight: 32.5, reps: 6 }
                     ],
                     unit: 'kg'
                 },
@@ -1211,11 +1234,13 @@
                     id: 'skullcrusher',
                     name: 'Skull Crusher (פשיטות מרפקים)',
                     note: '',
-                    current: '30kg x 4',
+                    current: '30kg x 5',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 25, reps: 8 },
                         { date: '2026-03-29', weight: 27.5, reps: 6 },
-                        { date: '2026-04-13', weight: 30, reps: 4 }
+                        { date: '2026-04-13', weight: 30, reps: 4 },
+                        { date: '2026-05-10', weight: 30, reps: 5 }
                     ],
                     unit: 'kg'
                 },
@@ -1223,12 +1248,14 @@
                     id: 'wide_row',
                     name: 'חתירה רחבה במכונה',
                     note: 'גובה 4-5 בכיסא, להישען לכרית',
-                    current: '45kg צד x 8',
+                    current: '47.5kg צד x 5',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 35, reps: 8 },
                         { date: '2026-03-29', weight: 40, reps: 6 },
                         { date: '2026-04-13', weight: 42.5, reps: 6 },
-                        { date: '2026-04-19', weight: 45, reps: 8 }
+                        { date: '2026-04-19', weight: 45, reps: 8 },
+                        { date: '2026-05-10', weight: 47.5, reps: 5 }
                     ],
                     unit: 'kg'
                 },
@@ -1237,7 +1264,6 @@
                     name: 'מקבילים',
                     note: '',
                     current: '+5kg x 6',
-                    isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 0, reps: 6 },
                         { date: '2026-04-19', weight: 5, reps: 6 }
@@ -1279,19 +1305,20 @@
             
             // Inject PRs dynamically into Training Plan
             const exerciseMappings = {
+                'בנץ עליון חופשי': 'bench_incline_free',
                 'לחיצת חזה בסמית': 'bench',
                 'מקבילים': 'dips',
                 'חתירה רחבה': 'wide_row',
                 'הרחקות בישיבה\\עמידה': 'latraise_sit',
                 'הרחקות כתפיים שכיבה\\ישיבה': 'latraise_lie',
-                'הרחקות כתפיים בשכיבה\\ישיבה': 'latraise_lie',
+                'הרחקות כתפיים בעמידה': 'latraise_stand',
                 'פרפר בקרוס': 'flyes',
                 'פרפר בישיבה\\עמידה בקרוס': 'flyes',
                 'פולי עליון': 'pulldown',
                 'כפיפת ברכיים בשכיבה': 'legcurl',
-                'כפיפות ברכיים בשכיבה': 'legcurl',
                 'האק סקוואט': 'hack',
                 'כפיפת מרפק בכיסא כומר': 'preacher',
+                'כפיפת מרפק כומר במכונה': 'preacher',
                 'SKULL CRUSHER': 'skullcrusher',
                 'פשיטות מאחורי הראש': 'skullcrusher',
                 'חתירה צרה בטיבר': 'tbar'
@@ -1575,7 +1602,7 @@
                         div.innerHTML = `
                             <div>
                                 <div class="font-bold text-slate-800 text-sm">${food.name}</div>
-                                <div class="text-xs text-slate-400">100 גרם = ${food.cal} קל' | P:${food.p} C:${food.c} F:${food.f}</div>
+                                <div class="text-xs text-slate-400">100 גרם = ${food.cal} קל' | P:${food.p} float C:${food.c} F:${food.f}</div>
                             </div>
                             <button class="bg-blue-100 text-blue-600 p-1.5 rounded-lg"><i data-lucide="plus" class="w-4 h-4"></i></button>
                         `;
