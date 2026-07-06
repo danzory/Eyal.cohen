@@ -147,33 +147,13 @@
                 </svg>
             </div>
             <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">דוח התקדמות</h1>
-            
-            <!-- Personal Info Bar -->
-            <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm text-slate-600">
-                <div class="flex items-center gap-1 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                    <i data-lucide="user" class="w-4 h-4 text-slate-400"></i>
-                    <span class="font-bold text-slate-800">אייל כהן</span>
-                </div>
-                <div class="flex items-center gap-1 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                    <i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i>
-                    <span>גיל: <span class="text-slate-400 italic">___</span></span>
-                </div>
-                <div class="flex items-center gap-1 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                    <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
-                    <span><span class="text-slate-400 italic">___@___.___</span></span>
-                </div>
-                <div class="flex items-center gap-1 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                    <i data-lucide="phone" class="w-4 h-4 text-slate-400"></i>
-                    <span><span class="text-slate-400 italic">___-_______</span></span>
-                </div>
-            </div>
+            <p class="text-base text-slate-500 font-medium">אייל כהן</p>
         </header>
 
         <!-- Sticky Navigation -->
         <nav class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
             <div class="flex overflow-x-auto smooth-scroll no-scrollbar px-2 sm:justify-center gap-1 pb-1 pt-1">
-                <button id="dashboardTab" class="whitespace-nowrap flex-shrink-0 py-3 px-4 sm:px-6 font-bold text-sm tab-active rounded-lg transition-all">דאשבורד</button>
-                <button id="progressTab" class="whitespace-nowrap flex-shrink-0 py-3 px-4 sm:px-6 font-bold text-sm text-slate-500 rounded-lg transition-all">דוח התקדמות</button>
+                <button id="progressTab" class="whitespace-nowrap flex-shrink-0 py-3 px-4 sm:px-6 font-bold text-sm tab-active rounded-lg transition-all">דוח התקדמות</button>
                 <button id="trainingTab" class="whitespace-nowrap flex-shrink-0 py-3 px-4 sm:px-6 font-bold text-sm text-slate-500 rounded-lg transition-all">תוכנית אימונים</button>
                 <button id="nutritionTab" class="whitespace-nowrap flex-shrink-0 py-3 px-4 sm:px-6 font-bold text-sm text-slate-500 rounded-lg transition-all">תזונה ומדדים</button>
             </div>
@@ -183,93 +163,8 @@
             <!-- Content Panes -->
             <div id="contentPanes" class="pb-10">
                 
-                <!-- Dashboard Pane -->
-                <div id="dashboardContent">
-                    <!-- Banner -->
-                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6 rounded-3xl shadow-lg mb-8 flex items-center justify-between relative overflow-hidden">
-                        <div class="relative z-10">
-                            <h2 class="text-2xl font-black mb-1">איזה שבוע מטורף, אייל! 🚀</h2>
-                            <p class="text-blue-100 text-sm">האק סקוואט ב-110 ק"ג, מקבילים עם משקל... פשוט רמה אחרת.</p>
-                        </div>
-                        <i data-lucide="award" class="w-20 h-20 text-white opacity-20 absolute left-4 -bottom-4 transform -rotate-12"></i>
-                    </div>
-
-                    <!-- Quick Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
-                        <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-                            <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mb-2 text-blue-600">
-                                <i data-lucide="trending-up" class="w-5 h-5"></i>
-                            </div>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide">משקל נוכחי</p>
-                            <h3 class="text-lg sm:text-xl font-black text-slate-800" id="dashWeight">83 ק"ג</h3>
-                        </div>
-                        <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-                            <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center mb-2 text-amber-500">
-                                <i data-lucide="medal" class="w-5 h-5"></i>
-                            </div>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide">שיאים חדשים</p>
-                            <h3 class="text-lg sm:text-xl font-black text-slate-800" id="dashPRs">--</h3>
-                        </div>
-                        <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-                            <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center mb-2 text-emerald-500">
-                                <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                            </div>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide">אימונים אישיים שבוצעו</p>
-                            <h3 class="text-lg sm:text-xl font-black text-slate-800">9</h3>
-                        </div>
-                        <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
-                            <div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mb-2 text-purple-500">
-                                <i data-lucide="activity" class="w-5 h-5"></i>
-                            </div>
-                            <p class="text-[11px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide">שלב אימון</p>
-                            <h3 class="text-lg sm:text-xl font-black text-slate-800">1</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Highlight PR -->
-                    <div class="bg-gradient-to-br from-amber-100 to-orange-100 border border-amber-200 p-5 rounded-3xl shadow-sm mb-8 flex items-center gap-4">
-                        <div class="bg-white p-3 rounded-2xl shadow-sm flex-shrink-0">
-                            <i data-lucide="trophy" class="text-amber-500 w-8 h-8"></i>
-                        </div>
-                        <div>
-                            <p class="text-[11px] font-bold text-amber-600 uppercase tracking-wide mb-1">שיא בולט החודש</p>
-                            <h3 class="text-lg font-black text-slate-800">האק סקוואט</h3>
-                            <p class="text-sm font-bold text-slate-600" dir="ltr">110kg x 6</p>
-                        </div>
-                    </div>
-
-                    <!-- Charts Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-100">
-                            <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                                <i data-lucide="target" class="w-5 h-5 text-indigo-500"></i> פרופיל חוזק
-                            </h3>
-                            <div class="relative h-[220px] w-full flex justify-center">
-                                <canvas id="strengthRadar"></canvas>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-100">
-                            <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                                <i data-lucide="line-chart" class="w-5 h-5 text-blue-500"></i> מגמת משקל
-                            </h3>
-                            <div class="relative h-[220px] w-full">
-                                <canvas id="miniWeightChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Recent Feed -->
-                    <h3 class="font-bold text-slate-800 mb-4 text-lg">פיד הישגים</h3>
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
-                        <ul class="divide-y divide-slate-50" id="recentActivityList">
-                            <!-- Dynamically populated -->
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- Progress Report Pane -->
-                <div id="progressContent" class="hidden">
+                <div id="progressContent">
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-8">
                         <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex flex-col items-center justify-center text-center">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">מטרה עיקרית</h3>
@@ -281,7 +176,17 @@
                         </div>
                         <div class="col-span-2 md:col-span-1 bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex flex-col items-center justify-center text-center">
                             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">תדירות</h3>
-                            <p class="text-lg font-bold text-slate-600">3 אימונים בשבוע</p>
+                            <p class="text-lg font-bold text-slate-600">לפי תוכנית</p>
+                        </div>
+                    </div>
+
+                     <div class="bg-white border-r-4 border-blue-500 p-5 rounded-2xl shadow-sm mb-8 flex items-start gap-4">
+                        <div class="bg-blue-50 p-2 rounded-full flex-shrink-0">
+                            <i data-lucide="flame" class="text-blue-500 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm mb-1">התקדמות אדירה! שבירת שיאים נמשכת! 🚀</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">נוספו שיאים חדשים במתח (+7.5 ק"ג), מקבילים קפץ ל-+12.5 ק"ג, וכפיפת ברכיים הגיעה ל-10 פלטות! וכמובן שיא חדש גם בכומר. כל הכבוד על ההתמדה, התוצאות מדברות בעד עצמן. פשוט מטורף!</p>
                         </div>
                     </div>
                     
@@ -1144,33 +1049,21 @@
             lucide.createIcons();
             
             // --- Tabs Logic ---
-            const tabs = ['dashboard', 'progress', 'training', 'nutrition'];
+            const tabs = ['progress', 'training', 'nutrition'];
             function switchTab(activeId) {
                 tabs.forEach(id => {
-                    const contentElement = document.getElementById(id + 'Content');
-                    if (contentElement) contentElement.classList.add('hidden');
-                    
+                    document.getElementById(id + 'Content').classList.add('hidden');
                     const btn = document.getElementById(id + 'Tab');
-                    if (btn) {
-                        btn.classList.remove('tab-active', 'text-slate-900');
-                        btn.classList.add('text-slate-500');
-                    }
+                    btn.classList.remove('tab-active', 'text-slate-900');
+                    btn.classList.add('text-slate-500');
                 });
-                
-                const activeContent = document.getElementById(activeId + 'Content');
-                if (activeContent) activeContent.classList.remove('hidden');
-                
+                document.getElementById(activeId + 'Content').classList.remove('hidden');
                 const activeBtn = document.getElementById(activeId + 'Tab');
-                if (activeBtn) {
-                    activeBtn.classList.add('tab-active', 'text-slate-900');
-                    activeBtn.classList.remove('text-slate-500');
-                    activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                }
+                activeBtn.classList.add('tab-active', 'text-slate-900');
+                activeBtn.classList.remove('text-slate-500');
+                activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
-            tabs.forEach(id => { 
-                const tabBtn = document.getElementById(id + 'Tab');
-                if(tabBtn) tabBtn.addEventListener('click', () => switchTab(id)); 
-            });
+            tabs.forEach(id => { document.getElementById(id + 'Tab').addEventListener('click', () => switchTab(id)); });
 
             function showToast(msg) {
                 const toast = document.getElementById('toast');
@@ -1187,6 +1080,7 @@
                     name: 'בנץ עליון חופשי',
                     note: '',
                     current: '50kg x 4',
+                    isNewPR: true,
                     history: [
                         { date: '2026-05-10', weight: 50, reps: 4 }
                     ],
@@ -1197,6 +1091,7 @@
                     name: 'לחיצת חזה במכונה',
                     note: '',
                     current: '25kg צד x 6',
+                    isNewPR: true,
                     history: [
                         { date: '2026-05-17', weight: 25, reps: 6 }
                     ],
@@ -1231,14 +1126,13 @@
                     id: 'rdl',
                     name: 'דדליפט רומני',
                     note: '',
-                    current: '75kg x 6',
+                    current: '60kg x 6',
                     isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 45, reps: 6 },
                         { date: '2026-04-19', weight: 55, reps: 6 },
                         { date: '2026-05-10', weight: 55, reps: 7 },
-                        { date: '2026-05-17', weight: 60, reps: 6 },
-                        { date: '2026-06-14', weight: 75, reps: 6 }
+                        { date: '2026-05-17', weight: 60, reps: 6 }
                     ],
                     unit: 'kg'
                 },
@@ -1247,6 +1141,7 @@
                     name: 'פולי עליון במכונה',
                     note: '',
                     current: '62.5kg צד x 5',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 50, reps: 8 },
                         { date: '2026-03-29', weight: 55, reps: 7 },
@@ -1260,14 +1155,13 @@
                     id: 'hack',
                     name: 'האק סקוואט',
                     note: '',
-                    current: '110kg x 6',
+                    current: '100kg x 6',
                     isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 80, reps: 8 },
                         { date: '2026-03-29', weight: 90, reps: 7 },
                         { date: '2026-04-13', weight: 100, reps: 6 },
-                        { date: '2026-05-10', weight: 100, reps: 6 },
-                        { date: '2026-06-14', weight: 110, reps: 6 }
+                        { date: '2026-05-10', weight: 100, reps: 6 }
                     ],
                     unit: 'kg'
                 },
@@ -1276,6 +1170,7 @@
                     name: 'סקוואט בולגרי בסמית',
                     note: '',
                     current: '10kg צד x 8',
+                    isNewPR: true,
                     history: [
                         { date: '2026-05-17', weight: 10, reps: 8 }
                     ],
@@ -1286,6 +1181,7 @@
                     name: 'פרפר בקרוס',
                     note: '',
                     current: '12.5kg צד x 6',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 7.5, reps: 10 },
                         { date: '2026-03-29', weight: 10, reps: 7 },
@@ -1294,18 +1190,6 @@
                         { date: '2026-05-17', weight: 12.5, reps: 6 }
                     ],
                     unit: 'kg'
-                },
-                {
-                    id: 'legcurl',
-                    name: 'כפיפת ברכיים בשכיבה',
-                    note: '',
-                    current: '8 פלטות x 6',
-                    history: [
-                        { date: '2026-03-15', weight: 6, reps: 8 },
-                        { date: '2026-03-29', weight: 7, reps: 8 },
-                        { date: '2026-04-13', weight: 8, reps: 6 }
-                    ],
-                    unit: 'פלטות'
                 },
                 {
                     id: 'latraise_sit',
@@ -1324,6 +1208,7 @@
                     name: 'הרחקות כתפיים בעמידה על ספסל',
                     note: '',
                     current: '7kg x 8',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 5, reps: 10 },
                         { date: '2026-03-29', weight: 6, reps: 8 },
@@ -1338,24 +1223,10 @@
                     name: 'הרחקות כתפיים בשכיבה',
                     note: '',
                     current: '10kg x 8',
+                    isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 10, reps: 7 },
                         { date: '2026-05-17', weight: 10, reps: 8 }
-                    ],
-                    unit: 'kg'
-                },
-                {
-                    id: 'preacher',
-                    name: 'כפיפת מרפק כומר במכונה',
-                    note: '',
-                    current: '32.5kg x 8',
-                    history: [
-                        { date: '2026-03-15', weight: 25, reps: 8 },
-                        { date: '2026-03-29', weight: 27.5, reps: 8 },
-                        { date: '2026-04-13', weight: 30, reps: 6 },
-                        { date: '2026-04-19', weight: 30, reps: 8 },
-                        { date: '2026-05-10', weight: 32.5, reps: 6 },
-                        { date: '2026-05-17', weight: 32.5, reps: 8 }
                     ],
                     unit: 'kg'
                 },
@@ -1364,6 +1235,7 @@
                     name: 'Skull Crusher (פשיטות מרפקים)',
                     note: '',
                     current: '30kg x 5',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 25, reps: 8 },
                         { date: '2026-03-29', weight: 27.5, reps: 6 },
@@ -1377,6 +1249,7 @@
                     name: 'חתירה רחבה במכונה',
                     note: 'גובה 4-5 בכיסא, להישען לכרית',
                     current: '50kg צד x 6',
+                    isNewPR: true,
                     history: [
                         { date: '2026-03-15', weight: 35, reps: 8 },
                         { date: '2026-03-29', weight: 40, reps: 6 },
@@ -1391,45 +1264,76 @@
                     id: 'dips',
                     name: 'מקבילים',
                     note: '',
-                    current: '+12.5kg x 6',
+                    current: '+12.5kg x 8',
                     isNewPR: true,
                     history: [
                         { date: '2026-04-13', weight: 0, reps: 6 },
                         { date: '2026-04-19', weight: 5, reps: 6 },
-                        { date: '2026-06-14', weight: 12.5, reps: 6 }
+                        { date: '2026-07-06', weight: 12.5, reps: 8 }
                     ],
                     unit: 'kg'
                 },
                 {
-                    id: 'pullups_weighted',
-                    name: 'מתח עם משקל',
+                    id: 'legcurl',
+                    name: 'כפיפת ברכיים בשכיבה',
                     note: '',
-                    current: '+5kg x 7',
+                    current: '10 פלטות x 8',
                     isNewPR: true,
                     history: [
-                        { date: '2026-06-14', weight: 5, reps: 7 }
+                        { date: '2026-03-15', weight: 6, reps: 8 },
+                        { date: '2026-03-29', weight: 7, reps: 8 },
+                        { date: '2026-04-13', weight: 8, reps: 6 },
+                        { date: '2026-07-06', weight: 10, reps: 8 }
+                    ],
+                    unit: 'פלטות'
+                },
+                {
+                    id: 'preacher',
+                    name: 'כפיפת מרפק כומר במכונה',
+                    note: '',
+                    current: '33.75kg x 6',
+                    isNewPR: true,
+                    history: [
+                        { date: '2026-03-15', weight: 25, reps: 8 },
+                        { date: '2026-03-29', weight: 27.5, reps: 8 },
+                        { date: '2026-04-13', weight: 30, reps: 6 },
+                        { date: '2026-04-19', weight: 30, reps: 8 },
+                        { date: '2026-05-10', weight: 32.5, reps: 6 },
+                        { date: '2026-05-17', weight: 32.5, reps: 8 },
+                        { date: '2026-07-06', weight: 33.75, reps: 6 }
+                    ],
+                    unit: 'kg'
+                },
+                {
+                    id: 'pullups',
+                    name: 'מתח',
+                    note: '',
+                    current: '+7.5kg x 6',
+                    isNewPR: true,
+                    history: [
+                        { date: '2026-07-06', weight: 7.5, reps: 6 }
                     ],
                     unit: 'kg'
                 },
                 {
                     id: 'barbell_row',
-                    name: 'חתירה מוט',
+                    name: 'חתירה עם מוט',
                     note: '',
-                    current: '55kg x 7',
+                    current: '60kg x 5',
                     isNewPR: true,
                     history: [
-                        { date: '2026-06-14', weight: 55, reps: 7 }
+                        { date: '2026-07-06', weight: 60, reps: 5 }
                     ],
                     unit: 'kg'
                 },
                 {
-                    id: 'calves_legpress',
-                    name: 'תאומים בלחיצת רגליים',
+                    id: 'hip_thrust',
+                    name: 'היפטראסט',
                     note: '',
-                    current: '60kg x 10',
+                    current: '30kg x 10',
                     isNewPR: true,
                     history: [
-                        { date: '2026-06-14', weight: 60, reps: 10 }
+                        { date: '2026-07-06', weight: 30, reps: 10 }
                     ],
                     unit: 'kg'
                 }
@@ -1488,9 +1392,9 @@
                 'SKULL CRUSHER': 'skullcrusher',
                 'פשיטות מאחורי הראש': 'skullcrusher',
                 'חתירה צרה בטיבר': 'tbar',
-                'מתח עם משקל': 'pullups_weighted',
-                'חתירה מוט': 'barbell_row',
-                'תאומים בלחיצת רגליים': 'calves_legpress'
+                'מתח': 'pullups',
+                'חתירה עם מוט': 'barbell_row',
+                'היפטראסט': 'hip_thrust'
             };
 
             const cells = document.querySelectorAll('td.font-bold.text-slate-800');
@@ -1526,10 +1430,10 @@
                     progressChartInstance.destroy();
                 }
 
-                // Handle special case for Dips (only reps)
-                const isBodyweightOnly = pr.id === 'dips';
-                const yAxisLabel = isBodyweightOnly ? 'חזרות' : `משקל (${pr.unit})`;
-                const dataKey = isBodyweightOnly ? 'reps' : 'weight';
+                // Handle special case for Dips/Pullups (if only reps are tracked, but here weight is tracked)
+                const isBodyweightOnly = false; // We have added weight to dips and pullups
+                const yAxisLabel = `משקל (${pr.unit})`;
+                const dataKey = 'weight';
 
                 progressChartInstance = new Chart(ctx, {
                     type: 'line',
@@ -1567,9 +1471,6 @@
                                 callbacks: {
                                     label: function(context) {
                                         const entry = pr.history[context.dataIndex];
-                                        if (isBodyweightOnly) {
-                                             return `${entry.reps} חזרות`;
-                                        }
                                         return `משקל: ${entry.weight} ${pr.unit} x ${entry.reps} חזרות`;
                                     }
                                 }
@@ -1608,9 +1509,7 @@
 
 
             // --- Weight Tracker Logic ---
-            let weightHistory = [
-                { id: Date.now(), date: new Date().toISOString().split('T')[0], weight: 83 }
-            ]; // מתחיל עם 83 ק"ג
+            let weightHistory = []; // Reset for new trainee
             
             // Set today's date in input
             document.getElementById('weightDate').valueAsDate = new Date();
@@ -1918,114 +1817,6 @@
                     renderMeal();
                 }
             });
-
-            // --- Dashboard Initialization ---
-            function initDashboard() {
-                // Update PR Count
-                const newPRs = prData.filter(pr => pr.isNewPR);
-                document.getElementById('dashPRs').innerText = newPRs.length;
-
-                // Strength Radar Chart
-                const ctxRadar = document.getElementById('strengthRadar').getContext('2d');
-                new Chart(ctxRadar, {
-                    type: 'radar',
-                    data: {
-                        labels: ['חזה', 'גב', 'רגליים', 'כתפיים', 'ידיים'],
-                        datasets: [{
-                            label: 'ציון חוזק (הערכה)',
-                            data: [82, 88, 92, 75, 80],
-                            backgroundColor: 'rgba(99, 102, 241, 0.2)',
-                            borderColor: 'rgba(99, 102, 241, 1)',
-                            pointBackgroundColor: 'rgba(99, 102, 241, 1)',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#fff',
-                            pointHoverBorderColor: 'rgba(99, 102, 241, 1)',
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            r: {
-                                angleLines: { color: 'rgba(0,0,0,0.05)' },
-                                grid: { color: 'rgba(0,0,0,0.05)' },
-                                pointLabels: { font: { family: 'Assistant', size: 13, weight: 'bold' } },
-                                ticks: { display: false, min: 0, max: 100 }
-                            }
-                        },
-                        plugins: { legend: { display: false } },
-                        maintainAspectRatio: false
-                    }
-                });
-
-                // Mini Weight Chart Setup
-                const ctxWeight = document.getElementById('miniWeightChart').getContext('2d');
-                const sortedWeight = [...weightHistory].sort((a,b) => new Date(a.date) - new Date(b.date));
-                
-                if (sortedWeight.length > 0) {
-                    document.getElementById('dashWeight').innerText = sortedWeight[sortedWeight.length - 1].weight + ' ק"ג';
-                } else {
-                    document.getElementById('dashWeight').innerText = '--';
-                }
-
-                new Chart(ctxWeight, {
-                    type: 'line',
-                    data: {
-                        labels: sortedWeight.length > 0 ? sortedWeight.map(w => {
-                            const d = new Date(w.date);
-                            return `${d.getDate()}/${d.getMonth()+1}`;
-                        }) : ['אין נתונים'],
-                        datasets: [{
-                            label: 'משקל',
-                            data: sortedWeight.length > 0 ? sortedWeight.map(w => w.weight) : [0],
-                            borderColor: '#3b82f6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            fill: true,
-                            tension: 0.4,
-                            borderWidth: 3,
-                            pointRadius: 4,
-                            pointBackgroundColor: '#ffffff',
-                            pointBorderColor: '#3b82f6'
-                        }]
-                    },
-                    options: {
-                        plugins: { legend: { display: false }, tooltip: { enabled: sortedWeight.length > 0 } },
-                        scales: {
-                            x: { grid: { display: false }, ticks: { font: { family: 'Assistant' } } },
-                            y: { grid: { borderDash: [5, 5], color: '#f1f5f9' }, ticks: { font: { family: 'Assistant' } }, beginAtZero: false }
-                        },
-                        maintainAspectRatio: false
-                    }
-                });
-
-                // Populate Recent Activity Feed
-                const recentList = document.getElementById('recentActivityList');
-                recentList.innerHTML = '';
-                if(newPRs.length === 0) {
-                    recentList.innerHTML = '<li class="p-4 text-center text-slate-500 text-sm">אין הישגים אחרונים להציג.</li>';
-                } else {
-                    // הצגת עד 6 הישגים חדשים מהעדכון האחרון
-                    newPRs.slice(0, 6).forEach(pr => {
-                        const li = document.createElement('li');
-                        li.className = "p-4 flex items-center gap-4 hover:bg-slate-50 transition-colors cursor-pointer group";
-                        li.onclick = () => { switchTab('progress'); setTimeout(() => openChart(pr), 150); };
-                        li.innerHTML = `
-                            <div class="bg-orange-100 p-2.5 rounded-full text-orange-500 shrink-0 group-hover:scale-110 transition-transform">
-                                <i data-lucide="flame" class="w-5 h-5"></i>
-                            </div>
-                            <div class="flex-1">
-                                <p class="font-bold text-slate-800 text-sm">שיא חדש: ${pr.name}</p>
-                                <p class="text-xs text-slate-500 flex items-center gap-1 mt-1"><i data-lucide="dumbbell" class="w-3 h-3 text-slate-400"></i> <span dir="ltr" class="font-bold text-blue-600">${pr.current}</span></p>
-                            </div>
-                            <i data-lucide="chevron-left" class="w-5 h-5 text-slate-300 group-hover:text-blue-500 transition-colors"></i>
-                        `;
-                        recentList.appendChild(li);
-                    });
-                }
-                lucide.createIcons();
-            }
-
-            // Initialize Dashboard
-            initDashboard();
 
         });
     </script>
